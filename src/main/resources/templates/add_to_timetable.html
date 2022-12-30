@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cyborg/bootstrap.min.css"
+        integrity="sha384-nEnU7Ae+3lD52AK+RGNzgieBWMnEfgTbRHIwEvp1XXPdqdO6uLTd/NwXbzboqjc2"
+        crossorigin="anonymous">
+  <title></title>
+</head>
+<body>
+
+<form action="#" th:action="@{/saveTimetable}" th:object="${timetable}" method="POST">
+
+
+  <select class="form-control mb-4 col-4" id="exampleSelect1" th:field="*{subject.id}">
+    <option value="0">Company</option>
+    <option th:each="subj:${subject}" th:selected="(${subj.id} == *{subject.id})" th:text="${subj.subject}" th:value="${subj.id}"></option>
+  </select>
+  <button type="submit" class="btn btn-success col-2" th:href="@{/}"> Update Employee</button>
+</form>
+
+</body>
+</html>

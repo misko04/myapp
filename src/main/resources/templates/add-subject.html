@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Timetable</title>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cyborg/bootstrap.min.css"
+        integrity="sha384-nEnU7Ae+3lD52AK+RGNzgieBWMnEfgTbRHIwEvp1XXPdqdO6uLTd/NwXbzboqjc2"
+        crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<div class="container">
+  <h1>Add new subject</h1>
+  <hr>
+  <form action="#" th:action="@{/saveSubject}" th:object="${subject}" method="POST">
+    <label class="form-label mt-4" for="subject">Subject</label>
+    <input type="text" th:field="*{subject}" class="form-control col-4" id="subject" placeholder="Enter subject name">
+    <label class="form-label mt-4" for="teacher">Teacher</label>
+    <input type="text" th:field="*{teacher}" class="form-control col-4" id="teacher" placeholder="Enter teacher's name">
+    <button type="submit" class="btn btn-success col-3 mt-5">Save Subject</button>
+  </form>
+  <hr>
+  <a th:href="@{/}"> Back to home page</a>
+</div>
+</html>
